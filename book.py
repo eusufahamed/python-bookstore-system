@@ -11,8 +11,8 @@ class Book:
         return self.stock_quantity
     
     def __str__(self):
-        # return f'Book Name: {self.title} by {self.author}, Price: {self.price}, Total Quantity: {self.stock_quantity}'
-        return f'{self.title} by {self.author}'
+        return f'Book Name: {self.title} by {self.author}, Price: {self.price}, Total Quantity: {self.stock_quantity}'
+        # return f'{self.title} by {self.author}'
 
 
 class Customer:
@@ -50,11 +50,11 @@ class Order:
 # book object
 book1 = Book('Introduction to Python', 'Eusuf Ahamed', 200, 20)
 book1.update_quantity(20)
-print('Book Object: ', book1)
+# print('Book Object: ', book1)
 
 # customer object
 customer1 = Customer('Eusuf Ahamed', 'eusufahmed789@gmail.com', 'Dhake')
-print('Customer Name: ', customer1)
+# print('Customer Name: ', customer1)
 
 # order object
 order1 = Order(customer1)
@@ -62,7 +62,22 @@ order1.add_book(book1)
 customer1.place_order(order1)
 
 customer_books = customer1.get_all_books()
-print(f'{customer1} has bought the following books')
+# print(f'{customer1} has bought the following books')
 for book in customer_books:
-    print('Book Name: ', book)
+    # print('Book Name: ', book)
+    pass
 
+if __name__ == '__main__':
+    input('\nGo to Book List by Pressing Enter')
+
+    print('\n----------Available Books:----------\n')
+
+    book_list = [
+        Book('Introduction to Python', 'John Smith', 200, 20),
+        Book('Data Structure and Algorithms', 'John Doe', 300, 10),
+        Book('Python Programming', 'John Smith', 300, 5)
+    ]
+
+    for book in book_list:
+        print(book)
+    print('\n')
