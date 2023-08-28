@@ -11,8 +11,8 @@ class Book:
         return self.stock_quantity
     
     def __str__(self):
-        return f'Book Name: {self.title} by {self.author}, Price: {self.price}, Total Quantity: {self.stock_quantity}'
-        # return f'{self.title} by {self.author}'
+        # return f'Book Name: {self.title} by {self.author}, Price: {self.price}, Total Quantity: {self.stock_quantity}'
+        return f'{self.title} by {self.author}'
 
 
 class Customer:
