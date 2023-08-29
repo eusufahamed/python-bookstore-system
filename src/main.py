@@ -1,4 +1,6 @@
 from book import Fiction, NonFiction
+from customer import Customer
+from order import Order
 
 fiction_book_list = [
     Fiction('Introduction to Python', 'John Smith', 200),
@@ -24,7 +26,25 @@ if __name__ == '__main__':
             for number, book in enumerate(fiction_book_list, 1):
                 print(f'{number}. {book.display_details()}')
 
-            # choice = input('\nChoose a number to buy book:\n1. \n2. \n3\n\n')
+            select_index = int(input('\nChoose a number to buy the book: ')) - 1
+            selected_book = fiction_book_list[select_index]
+
+            # print(selected_book)
+
+            customer_name = input('Write your name: ')
+            customer_email = input('Write your email: ')
+            customer_address = input('Write your address: ')
+
+            customer = Customer(customer_name, customer_email, customer_address)
+
+            order = Order(customer)
+            order.add_book(selected_book)
+            customer.place_order(order)
+
+            print(f"Thank you, {customer_name}! You have placed the following order:")
+            print(order)
+
+            break
         
         elif choice == '2':
             print('\n----------Available Non-Fiction Books:----------\n')
